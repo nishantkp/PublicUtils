@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 /**
  * This class will print the log messages
  */
-public class Log {
+public final class Log {
 
     /**
      * Log with unique identifier
