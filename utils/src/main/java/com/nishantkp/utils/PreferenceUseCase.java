@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 /**
  * Preference use case, use this to store, retrieve or check the preferences
  */
+@SuppressWarnings("unused")
 final class PreferenceUseCase {
     private SharedPreferences mSharedPreferences;
 

@@ -27,6 +27,7 @@ import java.io.Serializable;
  *      }
  * </pre>
  */
+@SuppressWarnings("unused")
 public class DataManager implements Serializable, DataContract {
 
     private static volatile DataManager sDataManager;
