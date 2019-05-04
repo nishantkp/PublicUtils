@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class DataManager implements Serializable {
 
-    private static DataManager sDataManager;
+    private static volatile DataManager sDataManager;
 
     /**
      * Private constructor, so no one can make direct instance of DataManager
