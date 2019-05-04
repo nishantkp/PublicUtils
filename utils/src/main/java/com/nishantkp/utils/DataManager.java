@@ -6,6 +6,27 @@ import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 
+/**
+ * DataManager deals with all the network related and database related operations
+ * <p>
+ * Prerequisites : Initialize {@link DataManager} with {@link DataManager#Initialize(Context)}
+ * in {@link android.app.Application} class, and then use {@link DataManager#getInstance()} to get
+ * instance of {@link DataManager}
+ * <p>
+ * i.e,
+ * <pre><{@code
+ *          // Subclass the application class
+ *          public class MyCustomApplication extends Application {
+ *
+ *              @Override
+ * 	            public void onCreate() {
+ * 	                super.onCreate();
+ *                  DataManager.Initialize(this);
+ *              }
+ *          }
+ *      }
+ * </pre>
+ */
 public class DataManager implements Serializable {
 
     private static volatile DataManager sDataManager;
