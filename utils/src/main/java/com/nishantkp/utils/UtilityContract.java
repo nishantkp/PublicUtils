@@ -1,10 +1,10 @@
 package com.nishantkp.utils;
 
 /**
- * DataManager contract class
+ * UtilityManager contract class
  */
 @SuppressWarnings("unused")
-interface DataContract {
+interface UtilityContract {
 
     /**
      * Use this method to save string preference

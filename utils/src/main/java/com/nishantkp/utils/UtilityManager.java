@@ -7,11 +7,11 @@ import androidx.annotation.NonNull;
 import java.io.Serializable;
 
 /**
- * DataManager deals with all the network related and database related operations
+ * UtilityManager deals with all the network related and database related operations
  * <p>
- * Prerequisites : Initialize {@link DataManager} with {@link DataManager#Initialize(Context)}
- * in {@link android.app.Application} class, and then use {@link DataManager#getInstance()} to get
- * instance of {@link DataManager}
+ * Prerequisites : Initialize {@link UtilityManager} with {@link UtilityManager#Initialize(Context)}
+ * in {@link android.app.Application} class, and then use {@link UtilityManager#getInstance()} to get
+ * instance of {@link UtilityManager}
  * <p>
  * i.e,
  * <pre><{@code
@@ -21,29 +21,29 @@ import java.io.Serializable;
  *              @Override
  * 	            public void onCreate() {
  * 	                super.onCreate();
- *                  DataManager.Initialize(this);
+ *                  UtilityManager.Initialize(this);
  *              }
  *          }
  *      }
  * </pre>
  */
 @SuppressWarnings("unused")
-public class DataManager implements Serializable, DataContract {
+public class UtilityManager implements Serializable, UtilityContract {
 
-    private static volatile DataManager sDataManager;
+    private static volatile UtilityManager sUtilityManager;
     private PreferenceUseCase mPreferenceUseCase;
 
     /**
-     * Private constructor, so no one can make direct instance of DataManager
+     * Private constructor, so no one can make direct instance of UtilityManager
      *
      * @param context context
      */
-    private DataManager(Context context) {
+    private UtilityManager(Context context) {
 
         //Prevent form the reflection api.
-        if (sDataManager != null) {
+        if (sUtilityManager != null) {
             throw new RuntimeException("Use getInstance() to get the single instance of " +
-                    "DataManager");
+                    "UtilityManager");
         }
 
         mPreferenceUseCase = new PreferenceUseCase(context);
@@ -55,36 +55,36 @@ public class DataManager implements Serializable, DataContract {
      * @param context Context
      */
     public static void Initialize(@NonNull Context context) {
-        if (sDataManager == null) {
-            synchronized (DataManager.class) {
-                if (sDataManager == null) {
-                    sDataManager = new DataManager(context);
+        if (sUtilityManager == null) {
+            synchronized (UtilityManager.class) {
+                if (sUtilityManager == null) {
+                    sUtilityManager = new UtilityManager(context);
                 }
             }
         }
     }
 
     /**
-     * Use this method to get the {@link DataManager} instance
+     * Use this method to get the {@link UtilityManager} instance
      *
-     * @return {@link DataManager} instance
+     * @return {@link UtilityManager} instance
      */
-    public static DataManager getInstance() {
+    public static UtilityManager getInstance() {
         // Null check
-        if (sDataManager == null) {
-            throw new RuntimeException("Use DataManager.Initialize(Context) to get the single " +
-                    "instance of initialize DataManager and then use getInstance() to get the " +
-                    "single instance of DataManager");
+        if (sUtilityManager == null) {
+            throw new RuntimeException("Use UtilityManager.Initialize(Context) to get the single " +
+                    "instance of initialize UtilityManager and then use getInstance() to get the " +
+                    "single instance of UtilityManager");
         }
-        return sDataManager;
+        return sUtilityManager;
     }
 
     /**
      * Make singleton from serializable and deserialization operation
      *
-     * @return The {@link DataManager} instance
+     * @return The {@link UtilityManager} instance
      */
-    protected DataManager readResolve() {
+    protected UtilityManager readResolve() {
         return getInstance();
     }
 
