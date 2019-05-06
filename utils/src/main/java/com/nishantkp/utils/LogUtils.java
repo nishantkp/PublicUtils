@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 /**
  * This class will print the log messages
  */
+@SuppressWarnings("unused")
 public final class LogUtils {
 
     /**
