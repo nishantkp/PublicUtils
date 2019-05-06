@@ -12,7 +12,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * i -> Info log
      *
      * @param clazz class instance
      * @param id    unique id which easily distinguish log from rest of logs
@@ -24,7 +24,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * i -> Info log
      *
      * @param ac activity instance
      * @param id unique id which easily distinguish log from rest of logs
@@ -36,7 +36,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * i -> Info log
      *
      * @param app application class instance
      * @param id  unique id which easily distinguish log from rest of logs
@@ -48,7 +48,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * i -> Info log
      *
      * @param fr class instance
      * @param id unique id which easily distinguish log from rest of logs
@@ -60,7 +60,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * i -> Info log
      *
      * @param id unique id which easily distinguish log from rest of logs
      * @param m  your log message
@@ -80,7 +80,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * d -> Debug log
      *
      * @param clazz class instance
      * @param id    unique id which easily distinguish log from rest of logs
@@ -92,7 +92,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * d -> Debug log
      *
      * @param ac activity instance
      * @param id unique id which easily distinguish log from rest of logs
@@ -104,7 +104,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * d -> Debug log
      *
      * @param app application class instance
      * @param id  unique id which easily distinguish log from rest of logs
@@ -116,7 +116,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * d -> Debug log
      *
      * @param fr class instance
      * @param id unique id which easily distinguish log from rest of logs
@@ -128,7 +128,7 @@ public final class LogUtils {
 
     /**
      * LogUtils with unique identifier
-     * ui -> Unique Identifier
+     * d -> Debug log
      *
      * @param id unique id which easily distinguish log from rest of logs
      * @param m  your log message
