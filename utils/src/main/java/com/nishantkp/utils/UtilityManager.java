@@ -1,6 +1,7 @@
 package com.nishantkp.utils;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 
 import androidx.annotation.NonNull;
 
@@ -10,8 +11,8 @@ import java.io.Serializable;
  * UtilityManager deals with all the network related and database related operations
  * <p>
  * Prerequisites : Initialize {@link UtilityManager} with {@link UtilityManager#Initialize(Context)}
- * in {@link android.app.Application} class, and then use {@link UtilityManager#getInstance()} to get
- * instance of {@link UtilityManager}
+ * in {@link android.app.Application} class, and then use {@link UtilityManager#getInstance()} to
+ * get instance of {@link UtilityManager}
  * <p>
  * i.e,
  * <pre><{@code
@@ -19,7 +20,7 @@ import java.io.Serializable;
  *          public class MyCustomApplication extends Application {
  *
  *              @Override
- * 	            public void onCreate() {
+ *                public void onCreate() {
  * 	                super.onCreate();
  *                  UtilityManager.Initialize(this);
  *              }
@@ -31,6 +32,7 @@ import java.io.Serializable;
 public class UtilityManager implements Serializable, UtilityContract {
 
     private static volatile UtilityManager sUtilityManager;
+    private static boolean sIsAppDebuggable;
     private PreferenceUseCase mPreferenceUseCase;
 
     /**
@@ -47,6 +49,8 @@ public class UtilityManager implements Serializable, UtilityContract {
         }
 
         mPreferenceUseCase = new PreferenceUseCase(context);
+        sIsAppDebuggable = ((context.getApplicationInfo().flags
+                & ApplicationInfo.FLAG_DEBUGGABLE) != 0);
     }
 
     /**
@@ -176,5 +180,15 @@ public class UtilityManager implements Serializable, UtilityContract {
     @Override
     public void removePreference(String key) {
         mPreferenceUseCase.remove(key);
+    }
+
+    /**
+     * Use this method to find out if the app is debuggable or not
+     *
+     * @return true or false
+     */
+    @Override
+    public boolean isAppDebuggable() {
+        return sIsAppDebuggable;
     }
 }
