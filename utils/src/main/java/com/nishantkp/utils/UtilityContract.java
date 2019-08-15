@@ -45,4 +45,9 @@ interface UtilityContract {
      * Use this method to remove particular preference
      */
     void removePreference(String key);
+
+    /**
+     * Use this method to find out if the app is debuggable or not
+     */
+    boolean isAppDebuggable();
 }
