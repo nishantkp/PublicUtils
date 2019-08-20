@@ -3,6 +3,8 @@ package com.nishantkp.utils;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.nishantkp.bus.Bus;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
