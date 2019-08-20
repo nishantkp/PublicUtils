@@ -1,0 +1,32 @@
+ext {
+    versions = [
+            'minimumSdk'  : 21,
+            'compileSdk'  : 29,
+            'targetSdk'   : 29,
+
+            'appCompat'   : '1.0.2',
+            'junit'       : '4.12',
+            'runner'      : '1.2.0',
+            'espressoCore': '3.2.0',
+
+            'rxJava'      : '2.2.11',
+            'rxAndroid'   : '2.1.1'
+    ]
+
+    deps = [
+            androidx: [
+                    'appCompat'   : "androidx.appcompat:appcompat:${versions.appCompat}",
+                    'testRunner'  : "androidx.test:runner:${versions.runner}",
+                    'espressoCore': "androidx.test.espresso:espresso-core:${versions.espressoCore}"
+            ],
+
+            junit   : [
+                    'junit': "junit:junit:${versions.junit}"
+            ],
+
+            rx      : [
+                    'java'   : "io.reactivex.rxjava2:rxjava:${versions.rxJava}",
+                    'android': "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
+            ]
+    ]
+}
