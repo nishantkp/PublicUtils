@@ -9,6 +9,9 @@ ext {
             'runner'      : '1.2.0',
             'espressoCore': '3.2.0',
 
+            'sourceCompat': JavaVersion.VERSION_1_8,
+            'targetCompat': JavaVersion.VERSION_1_8,
+
             'rxJava'      : '2.2.11',
             'rxAndroid'   : '2.1.1'
     ]

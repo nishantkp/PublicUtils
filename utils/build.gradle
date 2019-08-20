@@ -20,6 +20,10 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility versions.sourceCompat
+        targetCompatibility versions.targetCompat
+    }
 }
 
 dependencies {
