@@ -21,6 +21,7 @@ import io.reactivex.subjects.PublishSubject;
  * <p>
  * Here channel_id '0' is reserved for DEFAULT channel
  */
+@SuppressWarnings({"unused", "all"})
 public final class Bus {
     private static final int DEFAULT = 0;  /* Default channel Id */
     private static final CopyOnWriteArrayList<Integer> sChannelList = new CopyOnWriteArrayList<>();
