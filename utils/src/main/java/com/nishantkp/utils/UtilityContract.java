@@ -5,7 +5,6 @@ package com.nishantkp.utils;
  */
 @SuppressWarnings("unused")
 interface UtilityContract {
-
     /**
      * Use this method to save string preference
      */
