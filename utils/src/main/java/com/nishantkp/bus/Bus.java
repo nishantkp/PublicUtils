@@ -20,6 +20,27 @@ import io.reactivex.subjects.PublishSubject;
  * It implements Rx publish and subscribe fundamentals
  * <p>
  * Here channel_id '0' is reserved for DEFAULT channel
+ * <p>
+ * This bus works on pub-sub model
+ * Which means, you first have to subscribe the channel and then post something on that channel
+ * to observe the data
+ * <pre>
+ *     @code
+ * PublishSubject<Integer> source = PublishSubject.create();
+ *
+ * // It will get 1, 2, 3, 4 and onComplete
+ * source.subscribe(getFirstObserver());
+ *
+ * source.onNext(1);
+ * source.onNext(2);
+ * source.onNext(3);
+ *
+ * // It will get 4 and onComplete for second observer also.
+ * source.subscribe(getSecondObserver());
+ *
+ * source.onNext(4);
+ * source.onComplete();
+ * </pre>
  */
 @SuppressWarnings({"unused", "all"})
 public final class Bus {
